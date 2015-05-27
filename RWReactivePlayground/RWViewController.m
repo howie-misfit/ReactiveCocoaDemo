@@ -99,7 +99,11 @@
 //        NSLog(@"button clicked");
 //    }];
     
-    [[[self.signInButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+    [[[[self.signInButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+        doNext:^(id x) {
+            self.signInButton.enabled = NO;
+            self.signInFailureText.hidden = YES;
+        }]
         flattenMap:^id(id value) {
             return [self signinSignal];
         }]
