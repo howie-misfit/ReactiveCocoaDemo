@@ -25,3 +25,6 @@ DerivedData
 #
 Pods/
 Podfile.lock
+
+#react native
+node_modules
